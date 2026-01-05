@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="google-site-verification" content="R1xDZaXme3yS1LR9QTgmThdlnUDwqjYlq4vAWcRQSTw" />
+  <meta charset="UTF-8">
+  <title>Rutina Financiară</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: #ffffff;
+      background: #050c16;
+    }
+
+    /* HERO FULL SCREEN */
+    .hero {
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px;
+      background:
+        linear-gradient(120deg, rgba(5,12,22,0.95), rgba(5,12,22,0.7)),
+        radial-gradient(circle at right, #1e4fd8, transparent 60%),
+        radial-gradient(circle at left, #0fa3b1, transparent 55%);
+    }
+
+    .hero-content {
+      max-width: 900px;
+    }
+
+    .hero h1 {
+      font-size: 56px;
+      margin-bottom: 30px;
+      letter-spacing: 0.5px;
+    }
+
+    .hero p {
+      font-size: 21px;
+      line-height: 1.7;
+      opacity: 0.9;
+    }
+
+    /* SECTIONS */
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 120px 20px;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 38px;
+      margin-bottom: 50px;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 32px;
+    }
+
+    .feature {
+      background: linear-gradient(180deg, #0d1b2f, #081321);
+      padding: 34px;
+      border-radius: 22px;
+      font-size: 16px;
+      line-height: 1.55;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06);
+    }
+
+    .cta {
+      text-align: center;
+      margin-top: 70px;
+    }
+
+    .download-btn {
+      padding: 22px 56px;
+      background: linear-gradient(135deg, #4f7cff, #2dd4bf);
+      color: #050812;
+      text-decoration: none;
+      font-size: 18px;
+      border-radius: 18px;
+      font-weight: bold;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.45);
+      display: inline-block;
+    }
+
+    /* FEEDBACK */
+    .rating {
+      text-align: center;
+      font-size: 40px;
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
+
+    .rating span {
+      color: #334;
+    }
+
+    .rating span.active {
+      color: #facc15;
+    }
+
+    textarea {
+      width: 100%;
+      max-width: 750px;
+      display: block;
+      margin: 25px auto;
+      height: 140px;
+      background: #071120;
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 16px;
+      padding: 18px;
+      color: white;
+      font-size: 15px;
+      resize: none;
+    }
+
+    .submit-btn {
+      display: block;
+      margin: 25px auto;
+      padding: 16px 42px;
+      background: #4f7cff;
+      border: none;
+      border-radius: 16px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      padding: 80px 20px;
+      font-size: 14px;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-content">
+    <h1>Educația financiară</h1>
+    <p>
+      Educația financiară nu este despre câți bani câștigi,
+      ci despre cât de bine înțelegi mecanismele economice
+      care îți influențează viața.
+      <br><br>
+      Este diferența dintre reacție și decizie,
+      dintre instabilitate și control,
+      dintre supraviețuire financiară și strategie personală.
+    </p>
+  </div>
+</div>
+
+<!-- APP -->
+<section>
+  <h2>Rutina Financiară</h2>
+
+  <div class="features">
+    <div class="feature">Analizează veniturile și cheltuielile reale</div>
+    <div class="feature">Identifică dezechilibre financiare structurale</div>
+    <div class="feature">Oferă recomandări adaptate situației tale</div>
+    <div class="feature">Sprijină formarea unui fond de siguranță</div>
+    <div class="feature">Clarifică impactul ratelor și obligațiilor</div>
+    <div class="feature">Transformă educația financiară într-o rutină</div>
+  </div>
+
+  <div class="cta">
+    <a class="download-btn" href="RutinaFinanciara_Windows.zip">
+      Descarcă aplicația pentru Windows
+    </a>
+  </div>
+</section>
+
+<!-- FEEDBACK -->
+<section>
+  <h2>Feedback & dezvoltare</h2>
+
+  <p style="text-align:center; max-width:800px; margin:auto;">
+    Aplicația este la început. Evaluarea și sugestiile tale
+    influențează direct direcția de dezvoltare.
+  </p>
+
+  <div class="rating" id="rating">
+    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+  </div>
+
+  <textarea id="feedback" placeholder="Ce funcționalitate crezi că ar fi cea mai utilă?"></textarea>
+
+  <button class="submit-btn" onclick="sendFeedback()">Trimite feedback</button>
+</section>
+
+<footer>
+  © 2026 Rutina Financiară • Contact: ripaemanuel@yahoo.com
+</footer>
+
+<script>
+  let selectedRating = 0;
+  const stars = document.querySelectorAll('#rating span');
+
+  stars.forEach((star, index) => {
+    star.addEventListener('click', () => {
+      selectedRating = index + 1;
+      stars.forEach(s => s.classList.remove('active'));
+      for (let i = 0; i < selectedRating; i++) {
+        stars[i].classList.add('active');
+      }
+    });
+  });
+
+  function sendFeedback() {
+    const msg = document.getElementById('feedback').value.trim();
+    if (!selectedRating || !msg) {
+      alert('Selectează un rating și scrie un mesaj.');
+      return;
+    }
+
+    const subject = encodeURIComponent('Feedback Rutina Financiară');
+    const body = encodeURIComponent(
+      'Rating: ' + selectedRating + ' / 5\n\n' + msg
+    );
+
+    window.location.href =
+      'mailto:ripaemanuel@yahoo.com?subject=' + subject + '&body=' + body;
+  }
+</script>
+
+</body>
+</html>
